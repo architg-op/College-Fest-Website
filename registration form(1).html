@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+  <script type="text/javascript">
+    function choice(select) {
+      // alert("Hello")
+      if (select.options[select.selectedIndex].text == "Others") {  
+       document.getElementById("univName").disabled = false;
+       document.getElementById("fees").value = "100";
+       }
+       else {
+        document.getElementById("univName").disabled = true;
+       }
+
+    }
+    function formSubmit() {
+      var name=document.forms["myForm"]["pName"]; 
+      var number=document.forms["myForm"]["pNumber"];  
+      if (name.value == ""){  
+        alert("Name can't be blank");  
+        name.focus();
+        return false;  
+      }
+      if (number.value == "") {
+          alert("Contact Number can't be blank");
+          number.focus();
+          return false;
+      }
+      if (number.length >= 1 || number.length < 10) {
+        alert("Contact Number should be of 10 digits");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+  <style type="text/css">
+  .container{
+    padding-top: 40px;
+  }
+  h1 {
+    padding-top: 40px;
+    text-align: center;
+  }
+  .buttonSize {
+    margin-left: 80px;
+  }
+</style>
+</head>
+
+<body>
+	<h1><b>Registration Form(Individual)</b></h1>
+
+	<div class="container">
+    <form name="myForm" onsubmit="return formSubmit()" class="form-horizontal" >
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">Name: <span style="color:red">*</span></label>
+		
+		<div class="col-sm-10"><input type="text" class="form-control" name="pName" id='pname' placeholder="Enter Name"></div>
+	</div>
+
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">College Name: <span style="color:red">*</span></label>
+		<div class="col-sm-2">
+		<select class="form-control" id="univ" onchange="choice(this)" name="cname" id ='cname'>
+    <option>Chitkara University</option>
+    <option>Others</option>
+    
+  </select>
+</div>
+<div class="col-sm-4"><input type="text"  class="form-control" placeholder="Enter College Name" id="univName" disabled></div>
+	
+	</div>
+
+
+	<div class="form-group">
+	<label class="control-label col-sm-2">Conatct Number: <span style="color:red">*</span></label>
+   	 <div class="col-sm-10"><input type="number" class="form-control" size="10" name="pNumber" id="pNumber" placeholder ="Enter Contact Number"></div>	
+   	 </div>
+
+
+   	 <div class="form-group">
+	<label class="control-label col-sm-2">Event Name:  </label>
+   	 <div class="col-sm-10"><input type="text" class="form-control" placeholder ="Enter Event Name" disabled></div>	
+   	 </div>
+
+
+
+
+<div class="form-group">
+	<label class="control-label col-sm-2">Fee:  </label>
+   	 <div class="col-sm-10"><input type="text" class="form-control" id="fees" placeholder ="Fee" name="fee"disabled></div>	
+   	 </div>
+
+      <div class="control-label col-sm-7">
+		<button type="submit" onclick="return formSubmit()" class="btn btn-default btn-lg">Register</button>
+      </div>
+
+</form>
+</div></body>
+</html>

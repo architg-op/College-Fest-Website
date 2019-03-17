@@ -1,0 +1,19 @@
+body {
+	padding-top: 70px;
+}
+
+.navbar-inverse {
+	background:rgba(23, 32, 42,0.5);
+}
+
+
+.navbar-inverse .navbar-nav>li>a {
+	color:rgba(253, 254, 254,1);
+}
+
+.navbar-inverse .navbar-brand {
+	color:rgba(253, 254, 254,1);
+}
+a {
+	font-size: 20px;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form (Team)</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script type="text/javascript">
+    function choice(select) {
+      // alert("Hello")
+      if (select.options[select.selectedIndex].text == "Others") {  
+       document.getElementById("univName").disabled = false;
+       document.getElementById("fees").value = "100";
+       }
+       else {
+        document.getElementById("univName").disabled = true;
+       }
+    }
+
+    function myFunc() {
+      var name=document.forms["myForm"]["tname"]; 
+      var eName=document.forms["myForm"]["eName"]; 
+      var tLeaderName = document.forms["myForm"]["tLeaderName"]; 
+      var number=document.forms["myForm"]["tLeaderNumber"];  
+      if (name == "") {
+        alert("Name can't be Blank");
+        return false;
+      }
+      if (ename == "") {
+        alert("Name can't be Blank");
+        return false;
+      }
+      if (tLeadername == "") {
+        alert("Name can't be Blank");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+	<h1><b>Registration Form (Team)</b></h1>
+
+	<div class="container">
+    <form name="myForm" onsubmit="return myFunc()" class="form-horizontal">
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">Team Name: <span style="color:red">*</span></label>
+		<div class="col-sm-10"><input type="text" class="form-control" placeholder="Enter Team Name" name ="tname" id="tname" required></div>
+	</div>
+
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">College Name: <span style="color:red">*</span></label>
+		<div class="col-sm-2">
+		<select class="form-control" id="univ" onchange="choice(this)" name="cname">
+    <option>Chitkara University</option>
+    <option>Others</option>
+    
+  </select>
+</div>
+<div class="col-sm-2"><input type="text" class="form-control" placeholder="Enter College Name" id="univName" disabled></div>
+	
+	</div>
+
+
+
+   	 <div class="form-group">
+	<label class="control-label col-sm-2">Event Name: <span style="color:red">*</span> </label>
+   	 <div class="col-sm-10"><input type="text" class="form-control" name="eName" placeholder ="Enter Event Name" disabled></div>	
+   	 </div>
+
+
+<div class="form-group">
+		<label class="control-label col-sm-2">Team Leader Name: <span style="color:red">*</span></label>
+		<div class="col-sm-10"><input type="text" class="form-control" placeholder="Enter Team Leader Name" id="tLeaderName" name ="tLeaderName"></div>
+	</div>
+
+
+<div class="form-group">
+	<label class="control-label col-sm-2">Conatct Number: <span style="color:red">*</span></label>
+   	 <div class="col-sm-10"><input type="text" class="form-control" placeholder ="Enter Contact Number (tLeaderNumber)"></div>	
+   	 </div>
+  <!-- 
+  <div class="form-group">
+    <label class="control-label col-sm-2">Gender:  </label>
+      
+        <label class="radio-inline"><input type="radio" name="tlgender"  checked>Male</label>
+      
+      
+        <label class="radio-inline"><input type="radio" name="tlgender">Female</label>
+      
+      </div> -->
+
+
+<div class="form-group">
+		<label class="control-label col-sm-2">Member 2 Name: <span style="color:red">*</span></label>
+		<div class="col-sm-10"><input type="text" class="form-control" placeholder="Enter Name of Member2" name ="m2name" id="m2name"required></div>
+	</div>
+
+
+
+
+   	 <div class="form-group">
+		<label class="control-label col-sm-2">Member 3 Name: <span style="color:red">*</span></label>
+		<div class="col-sm-10"><input type="text" class="form-control" placeholder="Enter Name of Member3" name ="m3name" id="m3name"required></div>
+	</div>
+
+
+
+<div class="form-group">
+		<label class="control-label col-sm-2">Member 4 Name: <span style="color:red">*</span></label>
+		<div class="col-sm-10"><input type="text" class="form-control" placeholder="Enter Name of Member4" name ="m4name" id="m4name" required></div>
+	</div>
+
+
+
+      <div class="form-group">
+		<label class="control-label col-sm-2">Member 5 Name: <span style="color:red">*</span></label>
+		<div class="col-sm-10"><input type="text" class="form-control" placeholder="Enter Name of Member5" name ="m5name" id="m5name" required></div>
+	</div>
+
+
+<div class="form-group">
+	<label class="control-label col-sm-2">Gender:  </label>
+   	 
+      <label class="radio-inline"><input type="radio" name="m4gender" checked>Male</label>
+    
+    
+      <label class="radio-inline"><input type="radio" name="m4gender">Female</label>
+    
+   	 </div>
+
+
+<div class="form-group">
+	<label class="control-label col-sm-2">Accomodation(if required) : </label>
+   	 
+      <label class="radio-inline"><input type="radio" name="gender" checked>Yes</label>
+    
+    
+      <label class="radio-inline"><input type="radio" name="gender">No</label>
+    
+   	 </div>
+
+
+<div class="form-group">
+	<label class="control-label col-sm-2">Fee:  </label>
+   	 <div class="col-sm-10"><input type="text" class="form-control" id = "fees" placeholder ="Fee" name="fee"disabled></div>	
+   	 </div>
+
+
+      <div class="control-label col-sm-2">
+		<button type="submit" class="btn btn-default">Register</button>
+      </div>
+      
+</form>
+</div></body>
+</html>

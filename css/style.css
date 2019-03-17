@@ -1,0 +1,32 @@
+html{
+    scroll-behavior: smooth;
+}
+.backimage{
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.bottomborder{
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: #17202A;
+
+}
+.icon{
+    position: absolute;
+    top:90%;
+    left: 48%;
+    font-size: 50px;
+}
+.icon>marquee>a{
+    font-size: 50px;
+    color: aliceblue;
+}
+.events{
+    padding-top: 8%;
+    position: absolute;
+    top:100%;
+}
